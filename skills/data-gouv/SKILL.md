@@ -1,7 +1,7 @@
 ---
 name: data-gouv
 description: Skill professionnel pour Claude Code permettant d'accéder, télécharger et analyser les données ouvertes françaises via data.gouv.fr. Inclut une librairie Python complète, des exemples de code, et une documentation détaillée des datasets les plus utilisés.
-version: 1.0.0
+version: 2.0.0
 author: Benoit Vinceneux
 license: Licence Ouverte 2.0
 tags: [opendata, france, data, api, python, datasets, statistics]
@@ -20,6 +20,43 @@ Ce skill fournit un accès programmatique complet aux données ouvertes françai
 - 📊 Chargement direct dans pandas DataFrames
 - 📚 Documentation complète des datasets fréquemment utilisés
 - 🐍 Librairie Python réutilisable et professionnelle
+
+## Nouvelles fonctionnalités v2.0.0
+
+Cette version 2.0.0 ajoute le support du **MCP (Model Context Protocol) officiel de data.gouv.fr** en complément de notre librairie Python.
+
+### Deux approches complémentaires
+
+**1. Notre librairie Python** (recommandée pour 80% des cas)
+- ✅ Simple : `pip install` et c'est tout
+- ✅ Offline : Cache local
+- ✅ Portable : Fonctionne partout
+- ✅ Léger : Pas de Docker ni serveur
+
+**2. MCP officiel data.gouv.fr** (pour 20% des cas avancés)
+- ✅ Requêtes SQL complexes via Hydra
+- ✅ Recherche dans toute la base
+- ✅ Création de datasets
+- ⚠️ Nécessite Docker + configuration
+
+### Comment choisir ?
+
+**Utilisez notre librairie Python si :**
+- Vous voulez télécharger et analyser des datasets
+- Vous travaillez offline ou avec cache
+- Vous faites des scripts automatisés
+- Vous préférez la simplicité
+
+**Utilisez le MCP officiel si :**
+- Vous avez besoin de requêtes SQL complexes
+- Vous voulez créer/modifier des datasets
+- Vous posez des questions en langage naturel sur les données
+
+### Documentation
+
+- **Guide de choix détaillé** : [GUIDE_CHOIX.md](GUIDE_CHOIX.md)
+- **Documentation MCP officiel** : [mcp/MCP_OFFICIEL.md](mcp/MCP_OFFICIEL.md)
+- **Repository MCP officiel** : https://github.com/datagouv/datagouv-mcp
 
 ## Installation
 
@@ -388,6 +425,13 @@ Les contributions sont les bienvenues ! Pour ajouter un nouveau dataset document
 
 ## Changelog
 
+### v2.0.0 (2025-12-02)
+- 🚀 Ajout support MCP officiel data.gouv.fr
+- 📝 Guide de choix entre librairie Python et MCP
+- 📚 Documentation complète du MCP officiel
+- 🔗 Liens vers repository officiel
+- ✨ Deux approches complémentaires pour tous les cas d'usage
+
 ### v1.0.0 (2025-11-24)
 - 🎉 Version initiale
 - ✅ Librairie Python complète
@@ -399,7 +443,7 @@ Les contributions sont les bienvenues ! Pour ajouter un nouveau dataset document
 
 ---
 
-**Auteur** : Benoit Vinceneux  
-**Licence** : Licence Ouverte 2.0  
-**Version** : 1.0.0  
-**Dernière mise à jour** : 2025-11-24
+**Auteur** : Benoit Vinceneux
+**Licence** : Licence Ouverte 2.0
+**Version** : 2.0.0
+**Dernière mise à jour** : 2025-12-02

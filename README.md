@@ -3,11 +3,13 @@
 [![License](https://img.shields.io/badge/License-Licence_Ouverte_2.0-blue.svg)](LICENSE.md)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-purple.svg)](https://claude.ai/)
+[![Version](https://img.shields.io/badge/Version-2.0.0-green.svg)](https://github.com/benoitvx/data-gouv-skill/releases)
 
 > Skill professionnel pour Claude Code permettant d'accéder, télécharger et analyser les données ouvertes françaises via [data.gouv.fr](https://www.data.gouv.fr/)
 
 ## ✨ Fonctionnalités
 
+- 🆕 **Support du MCP officiel data.gouv.fr** (v2.0.0)
 - 🔍 **Recherche intelligente** de datasets via l'API officielle
 - 📥 **Téléchargement automatique** avec mise en cache
 - 🧹 **Parsing avancé** des formats français (CSV `;`, dates DD/MM/YYYY, décimales `,`)
@@ -44,6 +46,33 @@ git clone https://github.com/benoitvx/data-gouv-skill.git
 ```bash
 pip install pandas requests openpyxl
 ```
+
+## 🆕 Nouveau en v2.0.0
+
+Cette version ajoute le support du **MCP officiel data.gouv.fr** en complément de notre librairie Python !
+
+### Deux approches au choix
+
+**Notre librairie Python** (simple & rapide)
+```python
+from data-gouv.lib.datagouv import DataGouvAPI
+api = DataGouvAPI()
+df = api.load_csv(url)  # Cache, offline, portable
+```
+
+**MCP officiel** (requêtes SQL avancées)
+```
+"Dans le dataset IQVIA, trouve les départements où
+les vaccinations ont augmenté de plus de 50%"
+```
+
+### Comment choisir ?
+
+- **80% des cas** : Utilisez notre librairie Python (simple, rapide, offline)
+- **20% des cas** : Utilisez le MCP (requêtes SQL, création datasets, langage naturel)
+
+📖 **Guide complet** : [GUIDE_CHOIX.md](skills/data-gouv/GUIDE_CHOIX.md)
+📚 **Documentation MCP** : [mcp/MCP_OFFICIEL.md](skills/data-gouv/mcp/MCP_OFFICIEL.md)
 
 ## 📖 Exemple d'utilisation
 
@@ -305,8 +334,8 @@ Ce projet est publié sous [Licence Ouverte 2.0](LICENSE.md) (compatible Creativ
 
 ---
 
-**Auteur** : [Benoit Vinceneux](https://www.linkedin.com/in/votre-profil/)  
-**Version** : 1.0.0  
-**Dernière mise à jour** : 2025-11-24
+**Auteur** : [Benoit Vinceneux](https://www.linkedin.com/in/votre-profil/)
+**Version** : 2.0.0
+**Dernière mise à jour** : 2025-12-02
 
 ⭐ Si ce projet vous est utile, n'hésitez pas à mettre une étoile sur GitHub !
