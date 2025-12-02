@@ -1,7 +1,7 @@
 ---
 name: data-gouv
 description: Skill professionnel pour Claude Code permettant d'accéder, télécharger et analyser les données ouvertes françaises via data.gouv.fr. Inclut une librairie Python complète, des exemples de code, et une documentation détaillée des datasets les plus utilisés.
-version: 2.0.0
+version: 2.1.0
 author: Benoit Vinceneux
 license: Licence Ouverte 2.0
 tags: [opendata, france, data, api, python, datasets, statistics]
@@ -432,7 +432,7 @@ Les contributions sont les bienvenues ! Pour ajouter un nouveau dataset document
 - 🔗 Liens vers repository officiel
 - ✨ Deux approches complémentaires pour tous les cas d'usage
 
-### v1.0.0 (2025-11-24)
+### v1.0.0 (2025-12-02)
 - 🎉 Version initiale
 - ✅ Librairie Python complète
 - ✅ Documentation IQVIA Vaccination

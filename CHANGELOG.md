@@ -1,3 +1,35 @@
+
+## [2.1.0] - 2025-12-02
+
+### 🔧 Améliorations
+
+- **Documentation MCP simplifiée** : Remplacement de la documentation du MCP par un lien direct vers le repo officiel maintenu par data.gouv.fr
+- **Guide de choix neutre** : Refonte complète du `GUIDE_CHOIX.md` avec une présentation objective des deux approches
+- **Suppression des comparatifs biaisés** : Retrait du dossier `examples/hybrid/` et des affirmations "80%/20%"
+- **Focus sur la documentation** : Le skill se concentre maintenant sur la documentation de l'API data.gouv.fr plutôt que sur l'auto-promotion
+
+### 🙏 Remerciements
+
+Merci à l'équipe data.gouv.fr pour les retours constructifs qui ont permis d'améliorer la qualité et la neutralité de cette documentation.
+
+---
+
+
+## [2.1.0] - 2025-12-02
+
+### 🔧 Améliorations
+
+- **Documentation MCP simplifiée** : Remplacement de la documentation du MCP par un lien direct vers le repo officiel maintenu par data.gouv.fr
+- **Guide de choix neutre** : Refonte complète du `GUIDE_CHOIX.md` avec une présentation objective des deux approches
+- **Suppression des comparatifs biaisés** : Retrait du dossier `examples/hybrid/` et des affirmations "80%/20%"
+- **Focus sur la documentation** : Le skill se concentre maintenant sur la documentation de l'API data.gouv.fr plutôt que sur l'auto-promotion
+
+### 🙏 Remerciements
+
+Merci à l'équipe data.gouv.fr pour les retours constructifs qui ont permis d'améliorer la qualité et la neutralité de cette documentation.
+
+---
+
 # Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.

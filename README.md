@@ -9,7 +9,7 @@
 
 ## ✨ Fonctionnalités
 
-- 🆕 **Support du MCP officiel data.gouv.fr** (v2.0.0)
+- 🆕 **Support du MCP officiel data.gouv.fr** (v2.1.0)
 - 🔍 **Recherche intelligente** de datasets via l'API officielle
 - 📥 **Téléchargement automatique** avec mise en cache
 - 🧹 **Parsing avancé** des formats français (CSV `;`, dates DD/MM/YYYY, décimales `,`)
@@ -47,7 +47,7 @@ git clone https://github.com/benoitvx/data-gouv-skill.git
 pip install pandas requests openpyxl
 ```
 
-## 🆕 Nouveau en v2.0.0
+## 🆕 Nouveau en v2.1.0
 
 Cette version ajoute le support du **MCP officiel data.gouv.fr** en complément de notre librairie Python !
 
