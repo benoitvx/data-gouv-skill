@@ -1,0 +1,26 @@
+{
+  "name": "data-gouv",
+  "description": "Skill professionnel pour Claude Code - Accès aux données publiques françaises",
+  "plugins": [
+    {
+      "name": "data-gouv",
+      "description": "Skill professionnel pour Claude Code permettant d'interroger, télécharger et analyser les datasets de data.gouv.fr. Inclut des fonctions Python réutilisables, des exemples de code, et une documentation complète des datasets les plus utilisés (IQVIA vaccinations, qualité de l'eau, calendriers scolaires, etc.).",
+      "version": "2.1.0",
+      "author": "Benoit Vinceneux",
+      "source": {
+        "type": "github",
+        "repo": "benoitvx/data-gouv-skill"
+      },
+      "keywords": [
+        "opendata",
+        "france",
+        "government",
+        "datasets",
+        "api",
+        "statistics",
+        "data",
+        "python"
+      ]
+    }
+  ]
+}

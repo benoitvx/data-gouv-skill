@@ -68,3 +68,4 @@ htmlcov/
 config.local.py
 .env
 .env.local
+!.claude-plugin/*.json

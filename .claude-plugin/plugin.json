@@ -1,0 +1,31 @@
+{
+  "name": "data-gouv",
+  "version": "1.0.0",
+  "description": "Skill Claude Code pour accéder et manipuler les données ouvertes françaises via data.gouv.fr",
+  "author": "Benoit Vinceneux",
+  "license": "Licence Ouverte 2.0",
+  "repository": "https://github.com/benoitvx/data-gouv-skill",
+  "homepage": "https://github.com/benoitvx/data-gouv-skill",
+  "tags": [
+    "data",
+    "opendata",
+    "france",
+    "api",
+    "datasets",
+    "python"
+  ],
+  "requirements": {
+    "python": ">=3.8",
+    "packages": [
+      "pandas>=2.0.0",
+      "requests>=2.31.0",
+      "openpyxl>=3.1.0"
+    ]
+  },
+  "main": "skills/data-gouv/SKILL.md",
+  "scripts": {
+    "sync-datasets": "scripts/sync-datasets.sh",
+    "update-metadata": "scripts/update-metadata.py",
+    "test": "scripts/test-datasets.py"
+  }
+}
