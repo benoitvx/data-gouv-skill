@@ -9,6 +9,25 @@ tags: [opendata, france, data, api, python, datasets, statistics]
 
 # Skill data.gouv.fr pour Claude Code
 
+## ⚠️ Nature de ce skill
+
+Ce skill est une **documentation + librairie Python**, **PAS un plugin avec des commandes interactives**.
+
+**Ce que vous trouverez ici :**
+- 📚 Documentation de l'API data.gouv.fr
+- 🐍 Librairie Python réutilisable
+- 📊 Datasets documentés avec exemples
+- 💡 Code prêt à l'emploi
+
+**Ce que vous ne trouverez PAS ici :**
+- ❌ Commandes slash (`/data-gouv-search`, etc.)
+- ❌ Agents interactifs
+- ❌ Requêtes en langage naturel
+
+**Pour des commandes interactives**, utilisez le [MCP officiel data.gouv.fr](https://github.com/datagouv/datagouv-mcp).
+
+---
+
 ## Vue d'ensemble
 
 Ce skill fournit un accès programmatique complet aux données ouvertes françaises hébergées sur [data.gouv.fr](https://www.data.gouv.fr/), le portail national des données publiques.
@@ -368,10 +387,10 @@ try:
     df = api.load_csv(url)
     if df is None:
         raise ValueError("Failed to load CSV")
-    
+
     # Traiter les données
     result = df.groupby('region')['value'].sum()
-    
+
 except Exception as e:
     print(f"Erreur: {e}")
     # Fallback ou alternative
