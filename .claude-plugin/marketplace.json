@@ -1,8 +1,4 @@
 {
-  "owner": {
-    "name": "benoitvx",
-    "url": "https://github.com/benoitvx"
-  },
   "name": "data-gouv-skill",
   "description": "Skill professionnel pour Claude Code - Accès aux données publiques françaises",
   "plugins": [
@@ -10,14 +6,7 @@
       "name": "data-gouv",
       "description": "Skill professionnel pour Claude Code permettant d'interroger, télécharger et analyser les datasets de data.gouv.fr",
       "version": "2.1.0",
-      "author": {
-        "name": "Benoit Vinceneux",
-        "url": "https://github.com/benoitvx"
-      },
-      "source": {
-        "type": "git",
-        "url": "https://github.com/benoitvx/data-gouv-skill.git"
-      },
+      "source": "benoitvx/data-gouv-skill",
       "license": "Licence Ouverte 2.0",
       "keywords": [
         "opendata",
