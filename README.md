@@ -7,6 +7,20 @@
 
 > Skill professionnel pour Claude Code permettant d'accéder, télécharger et analyser les données ouvertes françaises via [data.gouv.fr](https://www.data.gouv.fr/)
 
+## 📖 À propos
+
+Ce repository fournit une **documentation complète** et une **librairie Python** pour travailler avec les données publiques françaises de data.gouv.fr.
+
+**⚠️ Important** : Ce n'est **PAS un plugin avec des commandes slash interactives**, mais plutôt :
+- 📚 Une documentation détaillée de l'API data.gouv.fr et des datasets
+- 🐍 Une librairie Python réutilisable (`datagouv.py`)
+- 📊 Des datasets documentés (IQVIA vaccinations, qualité de l'eau, etc.)
+- 💡 Des exemples de code prêts à l'emploi
+- 🔗 Des liens vers le MCP officiel data.gouv.fr
+
+**Pour des commandes interactives dans Claude Code** (requêtes SQL, langage naturel), utilisez le [MCP officiel data.gouv.fr](https://github.com/datagouv/datagouv-mcp).
+
+---
 ## ✨ Fonctionnalités
 
 - 🆕 **Support du MCP officiel data.gouv.fr** (v2.1.0)
@@ -18,33 +32,26 @@
 - 🐍 **Librairie Python** réutilisable et testée
 - 💡 **Exemples pratiques** pour chaque cas d'usage
 
-## 🚀 Installation rapide
+## 🚀 Accès à la documentation
 
-### Via le marketplace Claude Code
+### Consulter en ligne
 
+Parcourez la documentation directement sur GitHub :
+- [SKILL.md](skills/data-gouv/SKILL.md) - Documentation principale
+- [GUIDE_CHOIX.md](skills/data-gouv/GUIDE_CHOIX.md) - Choisir entre lib Python et MCP
+- [Datasets](skills/data-gouv/datasets/) - Documentation détaillée des datasets
+
+### Cloner localement
 ```bash
-/plugin marketplace add benoitvx/data-gouv-skill
-/plugin install data-gouv@data-gouv-skill
+# Pour consulter la documentation et utiliser la librairie Python
+git clone https://github.com/benoitvx/data-gouv-skill.git
+cd data-gouv-skill
 ```
 
-### Installation manuelle
-
-```bash
-# Installation globale (disponible partout)
-cd ~/.claude/skills
-git clone https://github.com/benoitvx/data-gouv-skill.git
-
-# OU installation par projet
-cd /chemin/vers/votre/projet
-mkdir -p .claude/skills
-cd .claude/skills
-git clone https://github.com/benoitvx/data-gouv-skill.git
-```
-
-### Dépendances
-
+### Installer la librairie Python
 ```bash
 pip install pandas requests openpyxl
+# La librairie est dans skills/data-gouv/lib/datagouv.py
 ```
 
 ## 🆕 Nouveau en v2.1.0
@@ -210,26 +217,26 @@ data-gouv-skill/
 ```python
 class DataGouvAPI:
     def __init__(self, cache_dir: Optional[str] = None)
-    
+
     def search_datasets(
-        self, query: str, 
+        self, query: str,
         organization: Optional[str] = None,
         tag: Optional[str] = None,
         page_size: int = 20
     ) -> Dict[str, Any]
-    
+
     def get_dataset(self, dataset_id: str) -> Optional[Dict[str, Any]]
-    
+
     def get_latest_resource(
-        self, dataset_id: str, 
+        self, dataset_id: str,
         format: str = 'csv'
     ) -> Optional[Dict[str, Any]]
-    
+
     def download_resource(
-        self, resource_url: str, 
+        self, resource_url: str,
         cache: bool = True
     ) -> Optional[bytes]
-    
+
     def load_csv(
         self, resource_url: str,
         sep: Optional[str] = None,
@@ -277,7 +284,7 @@ else:
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! 
+Les contributions sont les bienvenues !
 
 ### Ajouter un nouveau dataset documenté
 
