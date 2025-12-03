@@ -1,11 +1,11 @@
-# 🇫🇷 data.gouv.fr Skill pour Claude Code
+# 🇫🇷 data.gouv.fr - Documentation et Librairie Python
 
 [![License](https://img.shields.io/badge/License-Licence_Ouverte_2.0-blue.svg)](LICENSE.md)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![Claude Code](https://img.shields.io/badge/Claude-Code-purple.svg)](https://claude.ai/)
-[![Version](https://img.shields.io/badge/Version-2.0.0-green.svg)](https://github.com/benoitvx/data-gouv-skill/releases)
+[![Documentation](https://img.shields.io/badge/data.gouv.fr-Documentation-blue)](https://github.com/benoitvx/data-gouv-skill)
+[![Version](https://img.shields.io/badge/Version-2.1.1-green.svg)](https://github.com/benoitvx/data-gouv-skill/releases)
 
-> Skill professionnel pour Claude Code permettant d'accéder, télécharger et analyser les données ouvertes françaises via [data.gouv.fr](https://www.data.gouv.fr/)
+> Documentation complète et librairie Python pour accéder aux données ouvertes françaises via [data.gouv.fr](https://www.data.gouv.fr/)
 
 ## 📖 À propos
 
@@ -21,9 +21,9 @@ Ce repository fournit une **documentation complète** et une **librairie Python*
 **Pour des commandes interactives dans Claude Code** (requêtes SQL, langage naturel), utilisez le [MCP officiel data.gouv.fr](https://github.com/datagouv/datagouv-mcp).
 
 ---
+
 ## ✨ Fonctionnalités
 
-- 🆕 **Support du MCP officiel data.gouv.fr** (v2.1.0)
 - 🔍 **Recherche intelligente** de datasets via l'API officielle
 - 📥 **Téléchargement automatique** avec mise en cache
 - 🧹 **Parsing avancé** des formats français (CSV `;`, dates DD/MM/YYYY, décimales `,`)
@@ -32,7 +32,28 @@ Ce repository fournit une **documentation complète** et une **librairie Python*
 - 🐍 **Librairie Python** réutilisable et testée
 - 💡 **Exemples pratiques** pour chaque cas d'usage
 
-## 🚀 Accès à la documentation
+## 🚀 Installation
+
+### Cloner le repository
+```bash
+git clone https://github.com/benoitvx/data-gouv-skill.git
+cd data-gouv-skill
+```
+
+### Installer les dépendances Python
+```bash
+pip install pandas requests openpyxl
+```
+
+### Utiliser la librairie
+```python
+from skills.data-gouv.lib.datagouv import DataGouvAPI
+
+api = DataGouvAPI()
+results = api.search_datasets("vaccination")
+```
+
+## 📚 Documentation
 
 ### Consulter en ligne
 
@@ -41,50 +62,39 @@ Parcourez la documentation directement sur GitHub :
 - [GUIDE_CHOIX.md](skills/data-gouv/GUIDE_CHOIX.md) - Choisir entre lib Python et MCP
 - [Datasets](skills/data-gouv/datasets/) - Documentation détaillée des datasets
 
-### Cloner localement
-```bash
-# Pour consulter la documentation et utiliser la librairie Python
-git clone https://github.com/benoitvx/data-gouv-skill.git
-cd data-gouv-skill
-```
+## 🆕 Deux approches disponibles
 
-### Installer la librairie Python
-```bash
-pip install pandas requests openpyxl
-# La librairie est dans skills/data-gouv/lib/datagouv.py
-```
-
-## 🆕 Nouveau en v2.1.0
-
-Cette version ajoute le support du **MCP officiel data.gouv.fr** en complément de notre librairie Python !
-
-### Deux approches au choix
-
-**Notre librairie Python** (simple & rapide)
+### Notre librairie Python (simple & rapide)
 ```python
-from data-gouv.lib.datagouv import DataGouvAPI
+from skills.data-gouv.lib.datagouv import DataGouvAPI
 api = DataGouvAPI()
-df = api.load_csv(url)  # Cache, offline, portable
+df = api.load_csv(url, cache=True)  # Cache, offline, portable
 ```
 
-**MCP officiel** (requêtes SQL avancées)
+**Idéal pour** :
+- Scripts automatisés
+- Développement local
+- Analyse offline
+- Notebooks Jupyter
+
+### MCP officiel data.gouv.fr (requêtes avancées)
 ```
 "Dans le dataset IQVIA, trouve les départements où
 les vaccinations ont augmenté de plus de 50%"
 ```
 
-### Comment choisir ?
+**Idéal pour** :
+- Requêtes SQL complexes
+- Questions en langage naturel
+- Création de datasets
+- Intégration Claude Desktop/Cursor
 
-- **80% des cas** : Utilisez notre librairie Python (simple, rapide, offline)
-- **20% des cas** : Utilisez le MCP (requêtes SQL, création datasets, langage naturel)
-
-📖 **Guide complet** : [GUIDE_CHOIX.md](skills/data-gouv/GUIDE_CHOIX.md)
-📚 **Documentation MCP** : [mcp/MCP_OFFICIEL.md](skills/data-gouv/mcp/MCP_OFFICIEL.md)
+📖 **Guide complet** : [GUIDE_CHOIX.md](skills/data-gouv/GUIDE_CHOIX.md)  
+🔗 **MCP officiel** : https://github.com/datagouv/datagouv-mcp
 
 ## 📖 Exemple d'utilisation
-
 ```python
-from data-gouv.lib.datagouv import DataGouvAPI
+from skills.data-gouv.lib.datagouv import DataGouvAPI
 
 # Initialiser l'API
 api = DataGouvAPI()
@@ -132,9 +142,8 @@ Le skill inclut une documentation détaillée pour les datasets les plus utilis�
 ## 🎯 Cas d'usage
 
 ### Analyser les vaccinations par région
-
 ```python
-from data-gouv.lib.datagouv import DataGouvAPI
+from skills.data-gouv.lib.datagouv import DataGouvAPI
 import pandas as pd
 
 api = DataGouvAPI()
@@ -152,7 +161,6 @@ print(f"💉 Total vaccinations en Nouvelle-Aquitaine : {total:,}")
 ```
 
 ### Vérifier la qualité de l'eau
-
 ```python
 # Charger les données
 dataset_id = "resultats-du-controle-sanitaire-de-leau-distribuee-commune-par-commune"
@@ -167,7 +175,6 @@ print(f"✅ Taux de conformité : {taux:.1f}%")
 ```
 
 ### Comparer des campagnes de vaccination
-
 ```python
 # Charger 2 campagnes
 df_2025 = api.load_csv(url_2025)
@@ -178,14 +185,9 @@ evolution = ((df_2025['nb_doses'].sum() - df_2024['nb_doses'].sum()) / df_2024['
 print(f"📈 Évolution : {evolution:+.1f}%")
 ```
 
-## 🏗️ Structure du projet
-
+## 🗂️ Structure du projet
 ```
 data-gouv-skill/
-├── .claude-plugin/
-│   ├── plugin.json              # Métadonnées du plugin
-│   └── marketplace.json         # Configuration marketplace
-│
 ├── skills/data-gouv/
 │   ├── SKILL.md                 # Documentation principale (point d'entrée)
 │   │
@@ -213,7 +215,6 @@ data-gouv-skill/
 ## 🔧 API Reference
 
 ### Classe DataGouvAPI
-
 ```python
 class DataGouvAPI:
     def __init__(self, cache_dir: Optional[str] = None)
@@ -246,7 +247,6 @@ class DataGouvAPI:
 ```
 
 ### Fonctions utilitaires
-
 ```python
 def quick_search(query: str, limit: int = 5) -> List[Dict[str, Any]]
 def load_dataset_csv(dataset_id: str, resource_index: int = 0) -> Optional[pd.DataFrame]
@@ -255,14 +255,12 @@ def load_dataset_csv(dataset_id: str, resource_index: int = 0) -> Optional[pd.Da
 ## 💡 Bonnes pratiques
 
 ### 1. Utiliser le cache
-
 ```python
 api = DataGouvAPI(cache_dir="~/.cache/datagouv")
 df = api.load_csv(url)  # cache automatique
 ```
 
 ### 2. Gérer les gros fichiers
-
 ```python
 # Charger par chunks
 chunks = []
@@ -273,13 +271,12 @@ df = pd.concat(chunks)
 ```
 
 ### 3. Valider les données
-
 ```python
 df = api.load_csv(url)
 if df is not None:
     print(f"✓ {len(df)} lignes, {len(df.columns)} colonnes")
 else:
-    print("✗ Erreur de chargement")
+    print(f"✗ Erreur de chargement")
 ```
 
 ## 🤝 Contribution
@@ -337,12 +334,12 @@ Ce projet est publié sous [Licence Ouverte 2.0](LICENSE.md) (compatible Creativ
 
 - 🐛 **Bug reports** : [GitHub Issues](https://github.com/benoitvx/data-gouv-skill/issues)
 - 💡 **Feature requests** : [GitHub Discussions](https://github.com/benoitvx/data-gouv-skill/discussions)
-- 📧 **Contact** : [benoitvinceneux@gmail.com]
+- 📧 **Contact** : benoitvinceneux@gmail.com
 
 ---
 
-**Auteur** : [Benoit Vinceneux](https://www.linkedin.com/in/votre-profil/)
-**Version** : 2.0.0
+**Auteur** : Benoit Vinceneux  
+**Version** : 2.1.1  
 **Dernière mise à jour** : 2025-12-02
 
 ⭐ Si ce projet vous est utile, n'hésitez pas à mettre une étoile sur GitHub !
